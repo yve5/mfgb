@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1 class="buffer-top">Authentification</h1>
+
+      <form ng-submit="submit()">
+        <div class="form-group">
+          <label for="MyLogin">Identifiant</label>
+          <input type="text" class="form-control" ng-model="loginValue" placeholder="Identifiant" autofocus="">
+        </div>
+        <div class="form-group">
+          <label for="MyPassword">Mot de passe</label>
+          <input type="password" class="form-control" ng-model="passwordValue" placeholder="Mot de passe">
+        </div>
+        <button type="submit" class="btn btn-primary">Se Connecter</button>
+      </form>
+      
+      <br>
+      <div class="alert alert-danger" ng-show="showError">Mauvais identifiants</div>
+      
+      <h2>Exemple</h2 >
+      <p>
+        login : aze
+        <br>
+        password : qsd
+      </p>
+      
+      <img src="img/yeoman.png" />
+    </div>
+  </div>
+</div>
