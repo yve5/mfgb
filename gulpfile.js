@@ -6,6 +6,7 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var stylish = require('jshint-stylish');
+var glob = require('glob');
 
 
 // Configurable paths for the application
@@ -17,7 +18,7 @@ var appConfig = {
 
 // Command lines
 // -------------
-// Build SCSS Documents
+// Generate CSS from SCSS sheets
 gulp.task('scss', function () {
   return gulp.src(appConfig.app + '/css/*.scss')
     .pipe($.sass.sync({
@@ -30,7 +31,7 @@ gulp.task('scss', function () {
 });
 
 
-// Test
+// Test area
 gulp.task('jshint', function () {
   return gulp.src(appConfig.app + '/scripts/**/*.js')
       .pipe($.jshint()).pipe($.jshint.reporter(stylish));
@@ -62,6 +63,7 @@ var htmlEntities = function(input, output) {
     .pipe($.if('*.js', $.rev()))
     .pipe($.if('*.css', $.cssmin()))
     .pipe($.if('*.css', $.rev()))
+    .pipe($.if('*.ico', $.rev()))
 //    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
     .pipe($.revReplace())
     .pipe(gulp.dest(output));
@@ -77,12 +79,51 @@ gulp.task('views', ['scss'], function() {
 
 
 // Images
-gulp.task('favicon', function() {
-  return gulp.src(appConfig.app + '/*.ico')
-    .pipe($.rev())
-        .pipe($.revReplace())
 
-    .pipe(gulp.dest(appConfig.dist));
+
+//gulp.task('aze', function(){
+//  gulp.src([appConfig.app + '/*.html'])
+//    .pipe($.replace('favicon.ico', 'hello.ico'))
+//    .pipe(gulp.dest(appConfig.dist));
+//});
+
+
+
+
+gulp.task('favicon', function () {
+  var result = gulp.src([appConfig.app + '/favicon.ico'])
+          .pipe($.rev())
+          .pipe($.tap(function(file, qsd) {
+            console.log(file.path);
+          }))
+          .pipe(gulp.dest(appConfig.dist));
+  
+  
+//  gulp.src([appConfig.dist + '/index.html'])
+//                .pipe($.replace('favicon.ico', 'aze.ico'))
+//                .pipe(gulp.dest(appConfig.dist));
+        
+  
+//  glob(appConfig.dist + '/*.*', null, function (error, files) {
+//    var ico, tab;
+//    ico = files[0];
+//    
+//    console.log(files);
+//    
+//    if (ico !== undefined) {
+//      tab = ico.split('/');
+//      
+//      console.log(tab);
+//      
+//      if (tab[1] !== undefined) {
+//        gulp.src([appConfig.dist + '/index.html'])
+//                .pipe($.replace('favicon.ico', tab[1]))
+//                .pipe(gulp.dest(appConfig.dist));
+//      }
+//    }
+//  });
+  
+  return result;
 });
 
 gulp.task('images', function() {
@@ -149,28 +190,3 @@ gulp.task('serve:dist', function () {
 
 // Default gulp task
 gulp.task('default', ['serve']);
-
-
-
-//gulp.task("qsd", function() {
-//
-//  return gulp.src(appConfig.app +  '/index.html')
-//    .pipe($.useref())
-////    .pipe($.if('*.js', $.uglify()))
-//    .pipe($.if('*.css', $.cssmin()))
-//    .pipe($.if('*.css', $.rev()))
-////    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
-//    .pipe($.revReplace())
-//    .pipe(gulp.dest('public'));
-//
-//});
-
-
-//gulp.task('aze', function () {
-//  return gulp.src(appConfig.app + '/css/*.css')
-//          .pipe($.rev())
-//          .pipe(gulp.dest(appConfig.dist));
-//});
-
-
-
