@@ -51,7 +51,7 @@ gulp.task('test', ['jshint', 'jscs'], function () {
 var htmlEntities = function (input, output) {
   return gulp.src(input)
           .pipe($.useref())
-//          .pipe($.if('*.js', $.uglify()))
+          .pipe($.if('*.js', $.uglify({mangle: false})))
           .pipe($.if('*.js', $.rev()))
           .pipe($.if('*.css', $.cssmin()))
           .pipe($.if('*.css', $.rev()))
