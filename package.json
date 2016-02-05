@@ -6,7 +6,6 @@
     "autoprefixer-core": "^5.2.1",
     "browser-sync": "^2.11.1",
     "cssmin": "^0.4.3",
-    "glob": "^6.0.4",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.1",
     "gulp-cache": "^0.2.8",
@@ -32,6 +31,7 @@
     "jshint-stylish": "^1.0.0",
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
+    "path": "^0.12.7",
     "run-sequence": "^1.1.5",
     "time-grunt": "^1.0.0",
     "wiredep": "^3.0.0"
