@@ -31,19 +31,21 @@ gulp.task('scss', function () {
 });
 
 
-// Test area
+// Test
+var test_files = [appConfig.app + '/js/**/*.js', 'test/**/*.js'];
+
 gulp.task('jshint', function () {
-  return gulp.src(appConfig.app + '/js/**/*.js')
+  return gulp.src(test_files)
           .pipe($.jshint()).pipe($.jshint.reporter(stylish));
 });
 
 gulp.task('jscs', function () {
-  return gulp.src(appConfig.app + '/js/**/*.js')
+  return gulp.src(test_files)
           .pipe($.jscs()).pipe($.jscs.reporter());
 });
 
-gulp.task('test', ['jshint', 'jscs'], function () {
-  gulp.watch(appConfig.app + '/js/**/*.js', ['jshint', 'jscs']);
+gulp.task('hint', ['jshint', 'jscs'], function () {
+  gulp.watch(test_files, ['jshint', 'jscs']);
 });
 
 
@@ -100,6 +102,7 @@ gulp.task('fonts', function () {
   var bootstrap = gulp.src(appConfig.bower + '/bootstrap/fonts/*.{eot,svg,ttf,woff,woff2}')
           .pipe(gulp.dest(appConfig.dist + '/fonts'));
   
+  // Output
   return project && bootstrap;
 });
 
@@ -153,5 +156,7 @@ gulp.task('serve:dist', function () {
 });
 
 
-// Default gulp task
+// Quick tasks
 gulp.task('default', ['serve']);
+
+gulp.task('aze', ['serve:dist']);
