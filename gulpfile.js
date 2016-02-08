@@ -53,7 +53,7 @@ gulp.task('hint', ['jshint', 'jscs'], function () {
 var htmlEntities = function (input, output) {
   return gulp.src(input)
           .pipe($.useref())
-          .pipe($.if('*.js', $.uglify({mangle: false})))
+          .pipe($.if('*.js', $.uglify()))
           .pipe($.if('*.js', $.rev()))
           .pipe($.if('*.css', $.cssmin()))
           .pipe($.if('*.css', $.rev()))
@@ -170,4 +170,4 @@ gulp.task('serve:dist', function () {
 // Quick tasks
 gulp.task('default', ['serve']);
 
-//gulp.task('aze', ['serve:dist']);
+gulp.task('aze', ['serve:dist']);
