@@ -1,17 +1,19 @@
-MF Gulp Boilerplate
----
+# MF Gulp Boilerplate
 
-# What is it?
+
+## What is it?
 
 This is a personal Gulp and AngularJS project.
 
-# Todo list
+
+## Todo list
 
 - Express
 - i18n
 - Test
 
-# Installation
+
+## Installation
 
 a) Install NodeJS
 
@@ -23,9 +25,10 @@ bower install
 
 > If error appears, repeat again the command lines.
 
-# **node_modules** folder
 
-With Windows, the removal of the **node_modules** folder should be difficult.
+## Node_modules folder
+
+With Windows, the removal of **node_modules** folder should be difficult.
 
 Available solutions:
 - Delete the folder with a software as Filezilla.
@@ -33,11 +36,12 @@ Available solutions:
 
 > **rimraf** must be used WITH CAUTION. This command line can remove any file.
 
-# Gulp
+
+## Gulp
 
 Type of these below command line inside a terminal:
 
-## Command lines
+### Command lines
 
 | Command                    | Meaning                                                  |
 | -------------------------- | -------------------------------------------------------- |
@@ -45,7 +49,7 @@ Type of these below command line inside a terminal:
 | **gulp build**             | Project building in *dist* folder                        |
 | **serve:dist**             | Project building and server launching from *dist* folder |
 
-## Development Environment
+### Development Environment
 
 Type the command line **gulp** in terminal.
 
@@ -54,9 +58,10 @@ Type the command line **gulp** in terminal.
 | **http://localhost:1337** | Application interface              |
 | **http://localhost:3001** | Configuration interface            |
 
-# AngularJS
 
-## Controller Creation
+## AngularJS
+
+### Controller Creation
 
 1) Create a JavaScript file in "app/js/controller" folder (for example, LoginController.js).
 
@@ -78,7 +83,7 @@ angular.module('NameApp')
 <!-- build:js scripts/scripts.js -->
 ```
 
-## Service Creation
+### Service Creation
 
 1) Create a JavaScript file in "app/js/service" folder (for example, authService.js).
 
@@ -100,7 +105,7 @@ angular.module('NameApp')
 <!-- build:js scripts/scripts.js -->
 ```
 
-## View Creation
+### View Creation
 
 1) Create a HTML file (for example, login.html).
 
@@ -116,7 +121,7 @@ angular.module('NameApp')
  ...
 ```
 
-## Directive Creation
+### Directive Creation
 
 1) Create a JavaScript file with "app/js/directive" suffix (for example, HeaderDirective.js).
 
@@ -136,6 +141,7 @@ angular.module('NameApp')
 
 5) Add the view reference in *main.js* file.
 
-# License
+
+## License
 
 LipstickCSS is released under the [MIT License](http://opensource.org/licenses/MIT).

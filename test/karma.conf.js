@@ -60,10 +60,10 @@ module.exports = function(config) {
     ],
 
     // Which plugins to enable
-    plugins: [
-      'karma-phantomjs-launcher',
-      'karma-jasmine'
-    ],
+//    plugins: [
+//      'karma-phantomjs-launcher',
+//      'karma-jasmine'
+//    ],
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit

@@ -31,7 +31,7 @@ gulp.task('scss', function () {
 });
 
 
-// Test
+// JS Hints
 var test_files = [appConfig.app + '/js/**/*.js', 'test/**/*.js'];
 
 gulp.task('jshint', function () {
@@ -119,6 +119,17 @@ gulp.task('build', function () {
 });
 
 
+// Test
+var karma = require('karma').Server;
+
+gulp.task('qsd', function(done) {
+  new karma({
+    configFile: 'test/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
+
+
 // Start application
 gulp.task('serve', ['scss'], function () {
   browserSync({
@@ -159,4 +170,4 @@ gulp.task('serve:dist', function () {
 // Quick tasks
 gulp.task('default', ['serve']);
 
-gulp.task('aze', ['serve:dist']);
+//gulp.task('aze', ['serve:dist']);
