@@ -8,6 +8,7 @@ This is a personal Gulp and AngularJS project.
 # Installation
 
 a) Install NodeJS
+
 b) Type the following lines inside a command-line terminal :
 <pre>
 npm install
@@ -32,17 +33,19 @@ Type of these below command line inside a terminal:
 
 ## Command lines
 
-| Command | Meaning |
-| ------- | :---- |
-| **gulp** or **gulp serve** | Development server launching |
-| **gulp build** | Project building in *dist* folder |
-| **serve:dist** | Project building and server launching from **dist** folder |
+| Command                    | Meaning                                                    |
+| -------------------------- | ---------------------------------------------------------- |
+| **gulp** or **gulp serve** | Development server launching                               |
+| **gulp build**             | Project building in *dist* folder                          |
+| **serve:dist**             | Project building and server launching from **dist** folder |
 
 ## Launching
 
-L'exécution de la commande **gulp** lance automatiquement le serveur dans le navigateur Web par défaut depuis l'adresse suivante : http://localhost:9000
+Type the command line **gulp** in terminal.
 
-Il est possible d'accéder à un écran de configuration depuis l'adresse : http://localhost:3001
+The webbrowser will be automatically opened and forwarded to the following URL address : http://localhost:1337
+
+Configuration interface : http://localhost:3001
 
 # AngularJS
 
