@@ -1,89 +1,44 @@
-# MF Gulp Boilerplate
+MF Gulp Boilerplate
 ---
 
-Gulp personal work
+# What is it?
 
-## Installation
+This is a personal Gulp and AngularJS project.
 
-### NodeJS Environment
+# Installation
 
+a) Install NodeJS
+b) Type the following lines inside a command-line terminal :
 <pre>
 npm install
-</pre>
-
-### Bower components
-
-<pre>
 bower install
 </pre>
 
-## Commands
+> If error appears, repeat again the command lines.
 
+# **node_modules** folder
 
-| Command     | Meaning | Qty   |
-| ------- | ----: | :---: |
-| **gulp** or **gulp serve** | $1600 |  5    |
-| Phone    | $12   |  12   |
-| Pipe     | $1    |  234  |
+With Windows, the removal of the **node_modules** folder should be difficult.
 
-- **gulp** or **gulp serve** : 
+Available solutions:
+- Delete the folder with a software as Filezilla.
+- Type the foolowinf command line: *rimraf node_modules*
 
-## Documentation
-
-Read the [documentation website](https://yve5.github.io/lipstickcss) for further information.
-
-## License
-
-LipstickCSS is released under the [MIT License](http://opensource.org/licenses/MIT).
-
-
-
-# Draft
-
-# Pré-requis
-
-## Installation de l'environnement
-
-### Instructions à ne faire qu'une fois sur votre machine
-
-  a) installer nodeJS (npm vient direct avec nodeJS)
-
-  b) npm install -g gulp bower rimraf
-
-### Après téléchargement du projet depuis Git
-
-  a) ouvrir un terminal à la racine du projet
-
-  b) npm install
-
-  c) bower install
-
-## Suppression du répertoire **node_modules**
-
-Sous Windows, la suppression du répertoire **node_modules** peut être difficile.
-
-La première solution est de supprimer le répertoire via Filezilla.
-
-La deuxième consiste à lancer la commande : rimraf node_modules
-
-**La commande rimraf est à utiliser avec PRECAUTION. Théoriquement, elle est capable de supprimer tous les fichiers du poste.**
+> **rimraf** must be used WITH CAUTION. This command line can remove any file.
 
 # Gulp
 
-Gulp est un outil de compilation dans l'environnement NodeJS.
-Il configuré dans le fichier **gulpfile.js**.
-Dans le cadre de cette démonstration, plusieurs commandes ont été implémentées.
+Type of these below command line inside a terminal:
 
-Les commandes principales sont celles préconisées pour le développement :
- - **gulp** ou **gulp serve** : Lancement du serveur en développement
- - **gulp build** : Optimisation du projet dans le répertoire *dist*
- - **serve:dist** : Optimisation du projet dans le répertoire *dist* et lancement du serveur avec la version optimisée
+## Command lines
 
-Les commandes secondaires sont exécutées par les commandes principales et non vocation à être utilisés individuellement :
-- **gulp styles** : Génération des feuilles de styles
-- **gulp html** : Optimisation des pages HTML à la racine du projet
-- **gulp views** : Optimisation des pages HTML dans le répertoire *views*
-- **gulp images** : Déplacement des images vers le répertoire *dist*
+| Command | Meaning |
+| ------- | :---- |
+| **gulp** or **gulp serve** | Development server launching |
+| **gulp build** | Project building in *dist* folder |
+| **serve:dist** | Project building and server launching from **dist** folder |
+
+## Launching
 
 L'exécution de la commande **gulp** lance automatiquement le serveur dans le navigateur Web par défaut depuis l'adresse suivante : http://localhost:9000
 
@@ -91,29 +46,11 @@ Il est possible d'accéder à un écran de configuration depuis l'adresse : http
 
 # AngularJS
 
-## Gestion des adresses URL
+## Controller Creation
 
-Dans le cadre de cette démonstration, nous avons utilisé la gestion des adresses URL.
-Cette gestion fonctionne uniquement depuis un protocole HTTP ou HTTPS.
-Par exemple, si nous ouvrons index.html du projet directement depuis un explorateur Web, nous affichons une page blanche, car la gestion des adresses URL n'est pas conçue pour fonctionner en local.
+1) Create a JavaScript file with "Controller" suffix (for example, LoginCtrl.js).
 
-## Structure du projet
-
-La racine du projet n'a pas vocation à être modifier profondément.
-Les principales modifications de notre application doivent se trouver essentiellement dans les principaux répertoires du projet :
- - **controller**, **directive**, **service** accueillent des fichiers sources JavaScript.
- - **css** correspond aux feuilles de styles (CSS, SASS).
- - **i18n** accueille les fichiers JSON de traduction.
- - **img** correspond aux images de tout type.
- - **views** accueille toutes les pages HTML qui vont animer notre application.
- - **dependencies** est le répertoire où les ressources utilisées par l'application sont stockées.
- - **node_modules** est le répertoire installé par NodeJS.
-
-## Création d'un Controller
-
-1) Créer un fichier JavaScript avec le suffixe "Controller" (par exemple, LoginCtrl.js).
-
-2) Insérer le code suivant.
+2) Insert the following code:
 ```javascript
 'use strict';
 
@@ -123,7 +60,7 @@ angular.module('NomApplicationApp')
   }]);
 ```
 
-3) Rajouter la référence du fichier créé à la fin du fichier index.html.
+3) Add file reference at the bottom of *index.html* file.
 ```html
 <!-- build:js scripts/scripts.js -->
 ...
@@ -131,11 +68,11 @@ angular.module('NomApplicationApp')
 <!-- build:js scripts/scripts.js -->
 ```
 
-## Création d'un Service
+## Service Creation
 
-1) Créer un fichier JavaScript avec le suffixe "Service" (par exemple, authService.js).
+1) Create a JavaScript file with "Service" suffix (for example, authService.js).
 
-2) Insérer le code suivant.
+2) Insert the following code:
 ```javascript
 'use strict';
 
@@ -145,7 +82,7 @@ angular.module('NomApplicationApp')
   });
 ```
 
-3) Rajouter la référence du fichier créé à la fin du fichier index.html.
+3) Add file reference at the bottom of *index.html* file.
 ```html
 <!-- build:js scripts/scripts.js -->
 ...
@@ -153,13 +90,13 @@ angular.module('NomApplicationApp')
 <!-- build:js scripts/scripts.js -->
 ```
 
-## Création d'une View
+## View Creation
 
-1) Créer un fichier HTML (par exemple, login.html).
+1) Create a HTML file (for example, login.html).
 
-2) Insérer du code dans le document.
+2) Insert the HTML code.
 
-3) Rajouter la référence du fichier créé dans le fichier *main.js*.
+3) Add file reference at the bottom of *main.js* file.
 ```javascript
 <!-- build:js scripts/scripts.js -->
 ...
@@ -169,11 +106,11 @@ angular.module('NomApplicationApp')
  ...
 ```
 
-## Création d'un Directive
+## Directive Creation
 
-1) Créer un fichier JavaScript avec le suffixe "Directive" (par exemple, HeaderDirective).
+1) Create a JavaScript file with "Directive" suffix (for example, HeaderDirective.js).
 
-2) Insérer le code suivant.
+2) Insert the following code:
 ```javascript
 'use strict';
 
@@ -183,12 +120,12 @@ angular.module('helloApp')
   });
 ```
 
-3) Créer le Controller et la View.
+3) Create a controller and a view.
 
-4) Rajouter la référence des fichiers Javascript.
+4) Add references in JavaScript files.
 
-5) Rajouter la référence de la View dans le fichier *main.js*.
+5) Add the view reference in *main.js* file.
 
-## Création d'un lien
+## License
 
-Si on souhaite naviguer entre les différents écrans d'une application AngularJS, il faut nécessairement préfixer les adresses par "#/". Par exemple : #/nom-route
+LipstickCSS is released under the [MIT License](http://opensource.org/licenses/MIT).
