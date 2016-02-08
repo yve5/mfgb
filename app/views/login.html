@@ -1,29 +1,42 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h1 class="buffer-top">Authentification</h1>
+      <h1 class="buffer-top">Authentication</h1>
 
       <form ng-submit="submit()">
         <div class="form-group">
-          <label for="MyLogin">Identifiant</label>
-          <input type="text" class="form-control" ng-model="loginValue" placeholder="Identifiant" autofocus="">
+          <label for="MyLogin">Username</label>
+          <input type="text" class="form-control" ng-model="loginValue" placeholder="Username" autofocus="">
         </div>
         <div class="form-group">
-          <label for="MyPassword">Mot de passe</label>
-          <input type="password" class="form-control" ng-model="passwordValue" placeholder="Mot de passe">
+          <label for="MyPassword">Password</label>
+          <input type="password" class="form-control" ng-model="passwordValue" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">Se Connecter</button>
+        <button type="submit" class="btn btn-primary">Log in</button>
       </form>
       
       <br>
-      <div class="alert alert-danger" ng-show="showError">Mauvais identifiants</div>
+      <div class="alert alert-danger" ng-show="showError">Wrong credentials. Try again !</div>
       
-      <h2>Exemple</h2 >
-      <p>
-        login : aze
-        <br>
-        password : qsd
-      </p>
+      <h2>Example</h2 >
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>login</td>
+            <td>aze</td>
+          </tr>
+          <tr>
+            <td>password</td>
+            <td>qsd</td>
+          </tr>
+        </tbody>
+      </table>
 
       <img src="img/yeoman.png" />
 

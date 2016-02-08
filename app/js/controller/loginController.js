@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('helloApp').controller('LoginCtrl', ['$scope', '$location', 'authService',
+angular.module('helloApp').controller('LoginController', ['$scope', '$location', 'authService',
   function ($scope, $location, authService) {
     $scope.loginValue = '';
     $scope.passwordValue = '';

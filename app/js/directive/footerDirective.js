@@ -4,7 +4,7 @@ angular.module('helloApp').directive('footer', [
   function () {
     return {
       templateUrl: 'views/footer.html',
-      controller: 'FooterCtrl',
+      controller: 'FooterController',
       restrict: 'ACE'
     };
   }]);

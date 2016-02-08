@@ -11,19 +11,19 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
+        controller: 'LoginController',
         controllerAs: 'login'
       })
       .when('/profil', {
         templateUrl: 'views/profil.html',
-        controller: 'ProfilCtrl',
+        controller: 'ProfilController',
         controllerAs: 'profil'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);

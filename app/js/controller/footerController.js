@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('helloApp').controller('FooterCtrl', ['$scope', 'authService',
+angular.module('helloApp').controller('FooterController', ['$scope', 'authService',
   function ($scope, authService) {
     var myDate = new Date();
     var currentYear = myDate.getFullYear();

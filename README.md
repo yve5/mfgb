@@ -5,6 +5,12 @@ MF Gulp Boilerplate
 
 This is a personal Gulp and AngularJS project.
 
+# Todo list
+
+- Express
+- i18n
+- Test
+
 # Installation
 
 a) Install NodeJS
@@ -33,32 +39,33 @@ Type of these below command line inside a terminal:
 
 ## Command lines
 
-| Command                    | Meaning                                                    |
-| -------------------------- | ---------------------------------------------------------- |
-| **gulp** or **gulp serve** | Development server launching                               |
-| **gulp build**             | Project building in *dist* folder                          |
-| **serve:dist**             | Project building and server launching from **dist** folder |
+| Command                    | Meaning                                                  |
+| -------------------------- | -------------------------------------------------------- |
+| **gulp** or **gulp serve** | Development server launching                             |
+| **gulp build**             | Project building in *dist* folder                        |
+| **serve:dist**             | Project building and server launching from *dist* folder |
 
-## Launching
+## Development Environment
 
 Type the command line **gulp** in terminal.
 
-The webbrowser will be automatically opened and forwarded to the following URL address : http://localhost:1337
-
-Configuration interface : http://localhost:3001
+| URL Address               | Meaning                            |
+| ------------------------- | ---------------------------------- |
+| **http://localhost:1337** | Application interface              |
+| **http://localhost:3001** | Configuration interface            |
 
 # AngularJS
 
 ## Controller Creation
 
-1) Create a JavaScript file with "Controller" suffix (for example, LoginCtrl.js).
+1) Create a JavaScript file in "app/js/controller" folder (for example, LoginController.js).
 
 2) Insert the following code:
 ```javascript
 'use strict';
 
-angular.module('NomApplicationApp')
-  .controller('LoginCtrl', ['$scope', function ($scope) {
+angular.module('NameApp')
+  .controller('LoginController', ['$scope', function ($scope) {
       ...
   }]);
 ```
@@ -67,19 +74,19 @@ angular.module('NomApplicationApp')
 ```html
 <!-- build:js scripts/scripts.js -->
 ...
-<script src="controller/LoginCtrl.js"></script>
+<script src="controller/LoginController.js"></script>
 <!-- build:js scripts/scripts.js -->
 ```
 
 ## Service Creation
 
-1) Create a JavaScript file with "Service" suffix (for example, authService.js).
+1) Create a JavaScript file in "app/js/service" folder (for example, authService.js).
 
 2) Insert the following code:
 ```javascript
 'use strict';
 
-angular.module('NomApplicationApp')
+angular.module('NameApp')
   .service('authService', function () {
     ...
   });
@@ -111,13 +118,13 @@ angular.module('NomApplicationApp')
 
 ## Directive Creation
 
-1) Create a JavaScript file with "Directive" suffix (for example, HeaderDirective.js).
+1) Create a JavaScript file with "app/js/directive" suffix (for example, HeaderDirective.js).
 
 2) Insert the following code:
 ```javascript
 'use strict';
 
-angular.module('helloApp')
+angular.module('NameApp')
   .directive('header', function () {
     ...
   });
@@ -129,6 +136,6 @@ angular.module('helloApp')
 
 5) Add the view reference in *main.js* file.
 
-## License
+# License
 
 LipstickCSS is released under the [MIT License](http://opensource.org/licenses/MIT).

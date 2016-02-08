@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('helloApp').controller('ProfilCtrl', ['$scope', '$location', 'authService',
+angular.module('helloApp').controller('ProfilController', ['$scope', '$location', 'authService',
   function ($scope, $location, authService) {
     if (!authService.isAuth()) {
       $location.path('/login');
