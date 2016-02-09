@@ -63,14 +63,14 @@ Type the command line **gulp** in terminal.
 
 ### Controller Creation
 
-1) Create a JavaScript file in "app/js/controller" folder (for example, LoginController.js).
+1) Create a JavaScript file in "app/js/controller" folder (for example, loginController.js).
 
 2) Insert the following code:
 ```javascript
 'use strict';
 
-angular.module('NameApp')
-  .controller('LoginController', ['$scope', function ($scope) {
+angular.module('nameApp')
+  .controller('loginController', ['$scope', function ($scope) {
       ...
   }]);
 ```
@@ -79,7 +79,7 @@ angular.module('NameApp')
 ```html
 <!-- build:js scripts/scripts.js -->
 ...
-<script src="controller/LoginController.js"></script>
+<script src="controller/loginController.js"></script>
 <!-- build:js scripts/scripts.js -->
 ```
 
@@ -91,7 +91,7 @@ angular.module('NameApp')
 ```javascript
 'use strict';
 
-angular.module('NameApp')
+angular.module('nameApp')
   .service('authService', function () {
     ...
   });
@@ -123,13 +123,13 @@ angular.module('NameApp')
 
 ### Directive Creation
 
-1) Create a JavaScript file with "app/js/directive" suffix (for example, HeaderDirective.js).
+1) Create a JavaScript file with "app/js/directive" suffix (for example, headerDirective.js).
 
 2) Insert the following code:
 ```javascript
 'use strict';
 
-angular.module('NameApp')
+angular.module('nameApp')
   .directive('header', function () {
     ...
   });
