@@ -15,12 +15,12 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/login.html',
-        controller: 'LoginController',
+        controller: 'loginController',
         controllerAs: 'login'
       })
       .when('/profil', {
         templateUrl: 'views/profil.html',
-        controller: 'ProfilController',
+        controller: 'profilController',
         controllerAs: 'profil'
       })
       .otherwise({

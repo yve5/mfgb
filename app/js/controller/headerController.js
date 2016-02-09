@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('helloApp').controller('HeaderController', ['$scope', '$location', 'authService',
+angular.module('helloApp').controller('headerController', ['$scope', '$location', 'authService',
   function ($scope, $location, authService) {
     $scope.logout = function () {
       authService.setAuth(0);

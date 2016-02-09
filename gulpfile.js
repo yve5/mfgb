@@ -8,6 +8,7 @@ var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var stylish     = require('jshint-stylish');
 var path        = require('path');
+var karma       = require('karma').Server;
 
 
 // Configurable paths
@@ -120,12 +121,9 @@ gulp.task('build', function () {
 
 
 // Test
-var karma = require('karma').Server;
-
-gulp.task('qsd', function(done) {
+gulp.task('test', function(done) {
   new karma({
-    configFile: 'test/karma.conf.js',
-    singleRun: true
+    configFile: __dirname + '/test/my.conf.js'
   }, done).start();
 });
 
@@ -169,5 +167,3 @@ gulp.task('serve:dist', function () {
 
 // Quick tasks
 gulp.task('default', ['serve']);
-
-gulp.task('aze', ['serve:dist']);

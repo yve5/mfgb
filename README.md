@@ -10,7 +10,6 @@ This is a personal Gulp and AngularJS project.
 
 - Express
 - i18n
-- Test
 
 
 ## Installation
@@ -19,6 +18,7 @@ a) Install NodeJS
 
 b) Type the following lines inside a command-line terminal :
 <pre>
+npm install -g gulp karma
 npm install
 bower install
 </pre>

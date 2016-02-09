@@ -23,6 +23,7 @@
     "jit-grunt": "^0.9.1",
     "jshint": "^2.9.1",
     "jshint-stylish": "^1.0.0",
+    "karma": "^0.13.19",
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
     "path": "^0.12.7",
