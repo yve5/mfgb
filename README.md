@@ -8,7 +8,6 @@ This is a personal Gulp and AngularJS project.
 
 ## Todo list
 
-- Express
 - i18n
 
 
@@ -48,6 +47,8 @@ Type of these below command line inside a terminal:
 | **gulp** or **gulp serve** | Development server launching                             |
 | **gulp build**             | Project building in *dist* folder                        |
 | **serve:dist**             | Project building and server launching from *dist* folder |
+| **hint**                   | JavaScript Code Quality Validation                       |
+| **test**                   | Test Runs                                                |
 
 ### Development Environment
 

@@ -1,3 +1,5 @@
+/* globals describe, beforeEach, inject, it */
+
 'use strict';
 
 describe('Controller: MainCtrl', function () {
