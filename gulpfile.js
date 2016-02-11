@@ -8,7 +8,7 @@ var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var stylish     = require('jshint-stylish');
 var path        = require('path');
-var karma       = require('karma').Server;
+var Karma       = require('karma').Server;
 
 
 // Configurable paths
@@ -33,20 +33,20 @@ gulp.task('scss', function () {
 
 
 // JS Hints
-var test_files = [appConfig.app + '/js/**/*.js', 'test/**/*.js'];
+var testFiles = ['gulpfile.js', appConfig.app + '/js/**/*.js', 'test/**/*.js'];
 
 gulp.task('jshint', function () {
-  return gulp.src(test_files)
+  return gulp.src(testFiles)
           .pipe($.jshint()).pipe($.jshint.reporter(stylish));
 });
 
 gulp.task('jscs', function () {
-  return gulp.src(test_files)
+  return gulp.src(testFiles)
           .pipe($.jscs()).pipe($.jscs.reporter());
 });
 
 gulp.task('hint', ['jshint', 'jscs'], function () {
-  gulp.watch(test_files, ['jshint', 'jscs']);
+  gulp.watch(testFiles, ['jshint', 'jscs']);
 });
 
 
@@ -64,7 +64,7 @@ var htmlEntities = function (input, output) {
           })))
           .pipe($.revReplace())
           .pipe(gulp.dest(output));
-}
+};
 
 gulp.task('html', ['scss'], function () {
   return htmlEntities(appConfig.app + '/*.html', appConfig.dist);
@@ -79,7 +79,7 @@ gulp.task('views', ['scss'], function () {
 gulp.task('favicon', function () {
   return gulp.src([appConfig.app + '/favicon.ico'])
           .pipe($.rev())
-          .pipe($.tap(function (file, through) {
+          .pipe($.tap(function (file) {
             gulp.src([appConfig.dist + '/index.html'])
                     .pipe($.replace('"favicon.ico"', '"' + path.basename(file.path) + '"'))
                     .pipe(gulp.dest(appConfig.dist));
@@ -122,7 +122,7 @@ gulp.task('build', function () {
 
 // Test
 gulp.task('test', function(done) {
-  new karma({
+  new Karma({
     configFile: __dirname + '/test/my.conf.js'
   }, done).start();
 });
