@@ -32,11 +32,10 @@ gulp.task('scss', function () {
             css: appConfig.app + '/css/',
             outputStyle: 'expanded',
             style: 'nested'
-          }))
-          .on('error', function (error) {
+          }).on('error', function (error) {
             console.log(error);
             this.emit('end');
-          })
+          }))
           .pipe(gulp.dest(appConfig.app + '/css'))
           .pipe(reload({stream: true}));
 });
