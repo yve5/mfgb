@@ -1,25 +1,25 @@
 'use strict';
 
 // Require
-var gulp        = require('gulp');
-var $           = require('gulp-load-plugins')();
-var runSequence = require('run-sequence');
-var browserSync = require('browser-sync');
-var reload      = browserSync.reload;
-var stylish     = require('jshint-stylish');
-var path        = require('path');
-var Karma       = require('karma').Server;
+var gulp    = require('gulp');
+var $       = require('gulp-load-plugins')();
+var runs    = require('run-sequence');
+var bsync   = require('browser-sync');
+var reload  = bsync.reload;
+var stylish = require('jshint-stylish');
+var path    = require('path');
+var Karma   = require('karma').Server;
 
 
 // Configurable paths
 var appConfig = {
   bower: 'bower_components',
-  app: 'app',
-  dist: 'dist'
+  dist: 'dist',
+  app: 'app'
 };
 
 
-// Generate CSS from SCSS sheets
+// CSS generation from SCSS
 gulp.task('scss', function () {
   return gulp.src(appConfig.app + '/css/*.scss')
           .pipe($.sass.sync({
@@ -37,12 +37,14 @@ var testFiles = ['gulpfile.js', appConfig.app + '/js/**/*.js', 'test/**/*.js'];
 
 gulp.task('jshint', function () {
   return gulp.src(testFiles)
-          .pipe($.jshint()).pipe($.jshint.reporter(stylish));
+          .pipe($.jshint())
+          .pipe($.jshint.reporter(stylish));
 });
 
 gulp.task('jscs', function () {
   return gulp.src(testFiles)
-          .pipe($.jscs()).pipe($.jscs.reporter());
+          .pipe($.jscs())
+          .pipe($.jscs.reporter());
 });
 
 gulp.task('hint', ['jshint', 'jscs'], function () {
@@ -50,7 +52,7 @@ gulp.task('hint', ['jshint', 'jscs'], function () {
 });
 
 
-// HTML
+// HTML optimization
 var htmlEntities = function (input, output) {
   return gulp.src(input)
           .pipe($.useref())
@@ -116,7 +118,7 @@ gulp.task('clean', function () {
 
 // Build the application
 gulp.task('build', function () {
-  runSequence('clean', 'html', 'views', 'images', 'favicon', 'fonts');
+  runs('clean', 'html', 'views', 'images', 'favicon', 'fonts');
 });
 
 
@@ -130,7 +132,7 @@ gulp.task('test', function(done) {
 
 // Start application
 gulp.task('serve', ['scss'], function () {
-  browserSync({
+  bsync({
     notify: false,
     port: 1337,
     server: {
@@ -154,9 +156,9 @@ gulp.task('serve', ['scss'], function () {
 });
 
 
+// Distribution version generation
 gulp.task('dist', function () {
-//  runSequence('build');
-  browserSync({
+  bsync({
     notify: false,
     port: 1337,
     server: {
@@ -166,5 +168,5 @@ gulp.task('dist', function () {
 });
 
 
-// Quick tasks
+// Default task
 gulp.task('default', ['serve']);
