@@ -145,4 +145,4 @@ angular.module('nameApp')
 
 ## License
 
-LipstickCSS is released under the [MIT License](http://opensource.org/licenses/MIT).
+MF Gulp Boilerplate is released under the [MIT License](http://opensource.org/licenses/MIT).
