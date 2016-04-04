@@ -22,20 +22,11 @@ var appConfig = {
 // Generate CSS from SCSS sheets
 gulp.task('scss', function () {
   return gulp.src(appConfig.app + '/css/*.scss')
-//          .pipe($.sass.sync({
-//            outputStyle: 'expanded',
-//            includePaths: ['.'],
-//            precision: 10
-//          }).on('error', $.sass.logError))
-          .pipe($.compass({
-            sass: appConfig.app + '/css/',
-            css: appConfig.app + '/css/',
+          .pipe($.sass.sync({
             outputStyle: 'expanded',
-            style: 'nested'
-          }).on('error', function (error) {
-            console.log(error);
-            this.emit('end');
-          }))
+            includePaths: ['.'],
+            precision: 10
+          }).on('error', $.sass.logError))
           .pipe(gulp.dest(appConfig.app + '/css'))
           .pipe(reload({stream: true}));
 });
@@ -155,7 +146,8 @@ gulp.task('serve', ['scss'], function () {
     appConfig.app + '/views/*.html',
     appConfig.app + '/js/**/*.js',
     appConfig.app + '/img/**/*',
-    appConfig.app + '/fonts/**/*'
+    appConfig.app + '/fonts/**/*',
+    appConfig.app + '/css/**/*.css'
   ]).on('change', reload);
 
   gulp.watch(appConfig.app + '/css/**/*.scss', ['scss']);

@@ -46,7 +46,7 @@ Type of these below command line inside a terminal:
 | -------------------------- | -------------------------------------------------------- |
 | **gulp** or **gulp serve** | Development server launching                             |
 | **gulp build**             | Project building in *dist* folder                        |
-| **gulp serve:dist**        | Project building and server launching from *dist* folder |
+| **gulp dist**              | Project building and server launching from *dist* folder |
 | **gulp hint**              | JavaScript Code Quality Validation                       |
 | **gulp test**              | Test Runs                                                |
 
