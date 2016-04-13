@@ -62,7 +62,8 @@ var htmlEntities = function (input, output) {
           .pipe($.if('*.css', $.rev()))
           .pipe($.if('*.html', $.htmlmin({
             removeComments: true,
-            collapseWhitespace: true
+            collapseWhitespace: true,
+            conservativeCollapse: true
           })))
           .pipe($.revReplace())
           .pipe(gulp.dest(output));
@@ -118,7 +119,7 @@ gulp.task('clean', function () {
 
 // Build the application
 gulp.task('build', function () {
-  runs('clean', 'html', 'views', 'images', 'favicon', 'fonts');
+  runs('clean', 'html', 'views', 'images', 'favicon', 'fonts', 'dist');
 });
 
 
